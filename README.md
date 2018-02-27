@@ -1,0 +1,2 @@
+# kadicoin
+KadiCoin Core Repository

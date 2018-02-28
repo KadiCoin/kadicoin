@@ -1,3 +1,9 @@
+**KadiCoin Project**
+
+KadiCoin is an experimental cryptocurrency.<br>
+Its name comes from Kadikoy, Turkiye where a group of friends meet at.<br>
+Our aim is to create an awareness of Blockchain Technology and its use cases.<br>
+
 **Installation**
 
 sudo apt-get -y update<br>
@@ -22,7 +28,7 @@ sudo apt-get install -y qdbus qmlscene qt5-default qt5-qmake qttools5-dev-tools 
 
 **Get Source Code from GitHub and Build**<br><br>
 git clone https://github.com/KadiCoin/kadicoin.git<br>
-cd KadiCoin<br>
+cd kadicoin<br>
 ./autogen.sh<br>
 ./configure<br>
 make<br>

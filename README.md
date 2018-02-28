@@ -1,37 +1,63 @@
-## Welcome to GitHub Pages
+**Installation**
 
-You can use the [editor on GitHub](https://github.com/KadiCoin/kadicoin/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+sudo apt-get -y update<br>
+sudo apt-get -y upgrade<br>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+sudo apt-get install -y wget<br>
+sudo apt-get install -y curl<br>
+sudo apt-get install -y git<br>
+sudo apt-get install -y build-essential<br>
+sudo apt-get install -y autoconf<br>
+sudo apt-get install -y automake<br>
+sudo apt-get install -y libtool<br>
+sudo apt-get install -y pkg-config<br>
+sudo apt-get install -y libevent-dev<br>
+sudo add-apt-repository ppa:bitcoin/bitcoin<br>
+sudo apt-get update<br>
+sudo apt-get install -y libdb4.8-dev libdb4.8++-dev<br>
+sudo apt-get install -y libboost-all-dev<br>
+sudo apt-get install -y libssl-dev<br>
+sudo apt-get install -y libzmq3-dev<br>
+sudo apt-get install -y qdbus qmlscene qt5-default qt5-qmake qttools5-dev-tools qtbase5-dev-tools qtchooser qtdeclarative5-dev xbitmaps xterm libqt5svg5-dev qttools5-dev qtscript5-dev qtdeclarative5-folderlistmodel-plugin qtdeclarative5-controls-plugin<br>
 
-### Markdown
+**Get Source Code from GitHub and Build**<br><br>
+git clone https://github.com/KadiCoin/kadicoin.git<br>
+cd KadiCoin<br>
+./autogen.sh<br>
+./configure<br>
+make<br>
+sudo make install<br>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**Create Config File**<br><br>
+mkdir ~/.KadiCoin<br>
+cd ~/.KadiCoin<br>
+nano KadiCoin.conf<br>
 
-```markdown
-Syntax highlighted code block
+**Sample KadiCoin.conf**<br><br>
+\# Online Config Generator:<br>
+\# https://jlopp.github.io/bitcoin-core-config-generator/
 
-# Header 1
-## Header 2
-### Header 3
+server=1<br>
+\# Bind to given address and always listen on it. Use [host]:port notation for IPv6. Replace it with your own IP.<br>
+\# bind=192.168.0.26<br>
 
-- Bulleted
-- List
+\# Specify a non-default location to store blockchain and other data.<br>
+\# datadir=/data<br>
 
-1. Numbered
-2. List
+\# Run this node on the Bitcoin Test Network.<br>
+\# testnet=1<br>
 
-**Bold** and _Italic_ and `Code` text
+\# Run this node on its own independent test network.<br>
+regtest=1<br>
 
-[Link](url) and ![Image](src)
-```
+\# Username for JSON-RPC connections<br>
+rpcuser=kadicoinrpcuser<br>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+\# Password for JSON-RPC connections<br>
+rpcpassword=Put Some Strong Password Here<br>
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KadiCoin/kadicoin/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+**Run KadiCoind**<br><br>
+\# Run KadiCoind and see its messages on your console<br>
+KadiCoind -printtoconsole<br>
+\# Run KadiCoind as a daemon (service)<br>
+KadiCoind -daemon<br>
